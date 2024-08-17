@@ -1,24 +1,32 @@
 # World Language Translator
 
-## Introduction
+## Overview
 
-The **World Language Translator** is a Python-based tool designed for easy language translation and information retrieval. Users can identify languages spoken in specific countries, find countries where a particular language is spoken, and translate text between languages.
+The **World Language Translator** is a Python application designed to help users translate text between languages, find the languages spoken in specific countries, and identify countries where a particular language is spoken. It features a simple command-line interface that allows easy interaction with the tool.
 
 ## Features
 
-- **Language Lookup by Country**: Find out which languages are spoken in a given country.
-- **Country Lookup by Language**: Discover the countries where a specific language is spoken.
-- **Text Translation**: Translate phrases from English to a target language.
-- **View All Available Countries and Languages**: List all countries and languages stored in the database.
+- **Translate Text**: Translate text from English into multiple target languages.
+- **Languages by Country**: Find out which languages are spoken in a given country.
+- **Countries by Language**: Discover the countries where a specific language is spoken.
+- **List Available Languages and Countries**: View all supported languages and countries stored in the database.
+
+## Project Structure
+
+- **Abrevs.py**: Handles the mapping of language names to their abbreviations.
+- **Interface.py**: The main script for user interaction, providing a menu-driven interface.
+- **Tree.py**: Contains the logic for translations and language-country lookups.
+- **X2D.py**: Manages the loading of language and country data from Excel files.
+- **countries.py**: A dictionary that maps country codes to full country names.
 
 ## Installation
 
 ### Prerequisites
 
-- Python 3.x
-- pip for managing Python packages
+- **Python 3.x**
+- **pip**: For managing Python packages
 
-### Steps
+### Steps to Install
 
 1. **Clone the Repository**:
 
@@ -40,19 +48,32 @@ The **World Language Translator** is a Python-based tool designed for easy langu
 
 ## Usage
 
-Upon running the program, follow the menu prompts:
+Upon running `Interface.py`, you will be presented with a menu where you can:
 
 - **Find Languages by Country**: Input a country name to see its languages.
 - **Find Countries by Language**: Input a language to see where it is spoken.
 - **Translate Text**: Translate text from English to another language.
-- **View Lists**: Display all available countries or languages.
+- **View All Available Countries**: List all countries in the database.
+- **View All Available Languages**: List all languages in the database.
 
-### Example
+### Example Commands
 
-- **Translate "Hello" to Spanish**:
+- **Translate a Phrase**:
+
   ```plaintext
   Select an option: 3
   Enter text to translate: Hello
   Enter target language: Spanish
   Translation: Hola
   ```
+
+- **Find Languages in Canada**:
+  ```plaintext
+  Select an option: 1
+  Enter country: Canada
+  Languages spoken in Canada: English, French
+  ```
+
+## Configuration
+
+Ensure that your API keys are set correctly in the `Tree.py` file to enable translation functionality. Also, make sure the `countries.xlsx` and `languages.xlsx` files in the `data/` directory are properly formatted.
